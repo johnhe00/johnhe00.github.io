@@ -2,25 +2,23 @@
 
 (function(window, document) {
     var Joose = window.Joose = window.Joose || {};
-    var headerMenu;
-    var headerMenuTop;
+    var nav;
+    var navOffsetTop;
 
     function handleScroll() {
-        if (!headerMenu) {
+        if (!nav) {
             return;
         }
-        console.log(headerMenu.offsetTop);
-        console.log(window.pageYOffset);
-        if (window.pageYOffset >= headerMenuTop-10) {
-            headerMenu.classList.add("sticky");
+        if (window.pageYOffset >= navOffsetTop) {
+            nav.classList.add("sticky");
         } else {
-            headerMenu.classList.remove("sticky");
+            nav.classList.remove("sticky");
         }
     };
 
     document.addEventListener('DOMContentLoaded',function() {
-        headerMenu = document.getElementById("header_menu");
-        headerMenuTop = headerMenu.offsetTop;
+        nav = document.getElementById("nav");
+        navOffsetTop = nav.offsetTop;
         window.onscroll = handleScroll;
     });
 })(window, document);
