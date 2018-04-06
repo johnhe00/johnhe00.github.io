@@ -2,8 +2,10 @@
 
 (function(window, document) {
     var Joose = window.Joose = window.Joose || {};
+    var dolewhippp = "a baller";
     var headerMenu;
     var headerMenuTop;
+
     console.log('Hi, it\'s Chelsea, and I just want to say hello! :D');
 
     function handleScroll() {
