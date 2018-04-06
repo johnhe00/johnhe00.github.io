@@ -4,6 +4,7 @@
     var Joose = window.Joose = window.Joose || {};
     var headerMenu;
     var headerMenuTop;
+    console.log('Hi, it\'s Chelsea, and I just want to say hello! :D');
 
     function handleScroll() {
         if (!headerMenu) {
@@ -11,7 +12,6 @@
         }
         console.log(headerMenu.offsetTop);
         console.log(window.pageYOffset);
-        console.log('Hi, it\'s Chelsea, and I just want to say hello! :D');
         if (window.pageYOffset >= headerMenuTop-10) {
             headerMenu.classList.add("sticky");
         } else {
