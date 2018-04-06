@@ -1,25 +1,22 @@
 "use strict";
 
 (function(window, document) {
-    var Joose = window.Joose = window.Joose || {};
     var nav;
-    var navOffsetTop;
+    var hamburger;
 
-    function handleScroll() {
-        if (!nav) {
-            return;
-        }
-        if (window.pageYOffset >= navOffsetTop) {
-            nav.classList.add("sticky");
-        } else {
-            nav.classList.remove("sticky");
-        }
+    function handleHamburgerClick() {
+        if (!hamburger || !nav) { return; } 
+        nav.classList.toggle("open");
     };
 
-    document.addEventListener('DOMContentLoaded',function() {
+    function setup() {
+        hamburger = document.getElementById("hamburger_menu");
         nav = document.getElementById("nav");
-        navOffsetTop = nav.offsetTop;
-        window.onscroll = handleScroll;
-    });
+
+        hamburger.addEventListener("click", handleHamburgerClick);
+    };
+
+    document.addEventListener("DOMContentLoaded", setup);
+
 })(window, document);
 

@@ -3,22 +3,31 @@
 ---
 @charset "utf-8";
 
-$content-width: 720px;
+$content-width: 560px;
 $min-width: $content-width/2;
 $default-spacing: 5px;
 
 $font-family: Helvatica, Arial, sans-serif;
+
 $color1: #F9F9F8;
 $color2: #9c9997;
 $color3: #ADD6EF;
 $color4: #897EAC;
 $color5: #3457A0;
+$color6: #07225D;
 
 $nav-font-size: 30px;
+$nav-height: 45px;
 
-$font-color: $color5;
-$link-color: $font-color;
+$text-font-size: 20px;
+
+$text-color: $color5;
+$link-color: $text-color;
 $background-color: $color1;
+$alternate-background-color: $color2;
+$nav-background-color: $text-color;
+$nav-text-color: $background-color;
+$header-background-color: $color6;
 $accent-color: $color3;
 
 * {
@@ -28,27 +37,21 @@ $accent-color: $color3;
 
 html {
     background: $background-color;
-    color: $font-color;
+    color: $text-color;
     font-family: $font-family;
     width: 100%;
 }
 
 body {
     margin: 0 auto;
-    width: $content-width;
     min-width: $min-width;
 }
 
-a {
-    color: $link-color;
-}
-
-a:hover {
-    background: $accent-color;
-}
-
-a:visited {
-    color: $link-color;
+.header {
+    background: $header-background-color;
+    padding: $default-spacing;
+    text-align: center;
+    z-index: 20;
 }
 
 .portrait {
@@ -62,62 +65,103 @@ a:visited {
     transform: rotateY(360deg);
 }
 
-.sticky {
-    left: 0;
-    position: fixed;
-    top: 0;
+.nav {
+    background: $nav-background-color;
+    font-size: 0;
+    text-align: center;
     width: 100%;
+    z-index: 10;
 }
 
 .nav-item {
-    border-radius: $default-spacing;
     display: inline-block;
     font-size: $nav-font-size;
+    line-height: 35px;
     padding: $default-spacing $default-spacing*3;
     text-align: center;
-}
-
-a.nav-item {
-    transition: background 0.25s, padding 0.8s;
     text-decoration: none;
+
+    background: $nav-background-color;
+    color: $nav-text-color;
 }
 
-a.nav-item:hover {
+.nav-item.bubble {
+    transition: background 0.25s, padding 0.8s;
+}
+
+.nav-item.bubble:hover {
     background: $accent-color;
     padding-left: $default-spacing*6;
     padding-right: $default-spacing*6;
 }
 
-.sticky {
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
+.nav-item.active {
+    background: $alternate-background-color;
+    color: $nav-text-color;
 }
 
-.sticky + .page-content-wrapper {
-    padding-top: $nav-font-size*2+$default-spacing*2;
+.nav-item.hamburger {
+    color: $nav-text-color;
+    display: none;
+}
+
+a.nav-item:visited {
+    color: $nav-text-color;
+}
+
+a.nav-item:hover {
+    background: $accent-color;
+}
+
+@media screen and (max-width: $content-width) {
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .nav.open {
+        width: 100%;
+    }
+
+    .nav.open a.nav-item {
+        display: inline-block;
+        float: none;
+        text-align: left;
+        width: 100%;
+    }
+
+    .nav .nav-item {
+        display: none;
+    }
+
+    .nav a.nav-item.hamburger {
+        float: left;
+        display: inline-block;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .page-content-wrapper {
+        position: relative;
+        top: $nav-height;
+    }
 }
 
 .page-content-wrapper {
-    padding-top: $nav-font-size;
-    width: 100%;
+    font-size: $text-font-size;
+    min-width: $min-width;
+    margin: $default-spacing*3;
+    width: $content-width;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
 }
+
 .grid-item {
-    text-align: center;
-}
-
-.header {
-    padding: $default-spacing;
-    text-align: center;
-}
-
-.nav {
-    background: $background-color;
     text-align: center;
 }
