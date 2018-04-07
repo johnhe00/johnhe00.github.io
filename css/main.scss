@@ -180,15 +180,22 @@ a.nav-item:hover {
     .page-content-wrapper {
         position: relative;
         top: $nav-height;
+        width: 100% !important;
     }
 }
 
 .page-content-wrapper {
-    margin: 0 auto;
     font-size: $text-font-size;
     min-width: $min-width;
-    margin: $default-spacing*3;
+    margin: $default-spacing*3 auto;
     width: $content-width;
+}
+
+.soundcloud {
+    display: block;
+    margin: $default-spacing*2 0;
+    height: 200px;
+    width: 100%;
 }
 
 .grid-container {
