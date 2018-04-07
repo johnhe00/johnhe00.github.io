@@ -3,7 +3,7 @@
 ---
 @charset "utf-8";
 
-$content-width: 560px;
+$content-width: 640px;
 $min-width: $content-width/2;
 $default-spacing: 5px;
 
@@ -52,6 +52,39 @@ body {
     padding: $default-spacing;
     text-align: center;
     z-index: 20;
+}
+
+.info-section {
+    display: inline-block;
+    width: $min-width/2;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: $default-spacing*4;
+    position: absolute;
+    top: $default-spacing*4;
+}
+
+icon-grid-square {
+    width: $text-font-size;
+    height: $text-font-size;
+}
+
+.icon {
+    height: $text-font-size;
+    width: $text-font-size;
+    filter: invert(100%);
+    transition: filter 0.3s;
+    display: block;
+}
+
+.icon:hover {
+    filter: invert(50%);
 }
 
 .portrait {
@@ -151,6 +184,7 @@ a.nav-item:hover {
 }
 
 .page-content-wrapper {
+    margin: 0 auto;
     font-size: $text-font-size;
     min-width: $min-width;
     margin: $default-spacing*3;
