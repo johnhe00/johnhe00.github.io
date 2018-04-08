@@ -173,7 +173,7 @@ a.nav-item:hover {
         display: inline-block;
     }
 
-    .header {
+    .portrait {
         display: none;
     }
 
@@ -181,6 +181,24 @@ a.nav-item:hover {
         position: relative;
         top: $nav-height;
         width: 100% !important;
+    }
+
+    .info-section {
+        height: 100%;
+    }
+
+    .icon-grid {
+        display: block;
+        height: $text-font-size;
+        position: fixed;
+        right: 0;
+        top: $default-spacing*2;
+        z-index: 30;
+    }
+
+    .icon {
+        display: inline-block;
+        margin-right: $default-spacing*2;
     }
 }
 
