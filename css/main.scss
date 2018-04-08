@@ -15,6 +15,7 @@ $color3: #ADD6EF;
 $color4: #897EAC;
 $color5: #3457A0;
 $color6: #07225D;
+$color7: #DFDFDF;
 
 $nav-font-size: 30px;
 $nav-height: 45px;
@@ -23,11 +24,12 @@ $text-font-size: 20px;
 
 $text-color: $color5;
 $link-color: $text-color;
-$background-color: $color1;
+$background-color: $color7;
 $alternate-background-color: $color2;
 $nav-background-color: $text-color;
-$nav-text-color: $background-color;
 $header-background-color: $color6;
+
+$nav-text-color: $color1;
 $accent-color: $color3;
 
 * {
@@ -179,7 +181,7 @@ a.nav-item:hover {
 
     .page-content-wrapper {
         position: relative;
-        top: $nav-height;
+        top: $default-spacing*3;
         width: 100% !important;
     }
 
@@ -198,7 +200,7 @@ a.nav-item:hover {
 
     .icon {
         display: inline-block;
-        margin-right: $default-spacing*2;
+        margin-right: $default-spacing*3;
     }
 }
 
