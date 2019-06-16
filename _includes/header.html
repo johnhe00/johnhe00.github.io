@@ -1,0 +1,19 @@
+<header id="header" class="header">
+	<section class="portrait-wrapper">
+		<img class="portrait" src="/imgs/me.jpg" />
+        <div class="title-wrapper">
+            <h1 class="title">@john_he</h1>
+            <h2 class="subtitle">Citizen of the world, student of life</h2>
+        </div>
+	</section>
+    <nav id="nav" class="nav">
+    {% for item in site.navigation %}
+        {% assign class = 'nav-item' %}
+        {% if page.url contains item.url %}
+            {% assign class = 'nav-item current' %}
+        {% endif %}
+        <a class="{{ class }}" href="{{ item.url }}">{{ item.title}}</a>
+    {% endfor %}
+    </nav>
+</header>
+
