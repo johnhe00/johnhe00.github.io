@@ -33,36 +33,22 @@ body {
     background: $header-background-color;
 }
 
-.portrait-wrapper {
+.title-wrapper {
     padding: $default-spacing;
     padding-bottom: $default-spacing*3;
-    text-align: center;
     background: $background-color;
-}
-
-.portrait {
-    border-radius: $header-height/2;
-    height: $header-height;
-    width: $header-height;
-    position: absolute;
-    left: $default-spacing*3;
-    top: $default-spacing*3;
-}
-
-.title-wrapper {
-    display: inline-block;
 }
 
 .title {
     font-size: xx-large;
-    text-align: left;
+    text-align: center;
     line-height: $header-height;
     vertical-align: text-bottom;
 }
 
 .subtitle {
     font-size: x-small;
-    text-align: left;
+    text-align: center;
 }
 
 .spacer {
@@ -131,3 +117,33 @@ body {
     color: $header-text-color;
     font-size: small;
 }
+
+.about-portrait-wrapper {
+    text-align: center;
+    margin-bottom: $default-spacing*2;
+}
+
+.about-portrait {
+    width: 30%;
+    border-radius: 50%;
+}
+
+.about-titles {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.about-bullet {
+    padding: $default-spacing;
+    font-weight: lighter;
+}
+
+.footer {
+    padding-top: $default-spacing*3;
+    background: $background-color;
+}
+
+.footer-donate-wrapper {
+    text-align: center;
+}
+
