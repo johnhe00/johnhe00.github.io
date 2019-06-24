@@ -71,6 +71,8 @@ body {
     padding: $default-spacing*2 0;
     font-size: smaller;
     font-weight: bold;
+    border-bottom: 1px solid transparent;
+    color: $header-text-color;
 }
 
 .nav-item:visited {
@@ -124,6 +126,7 @@ body {
 }
 
 .about-portrait {
+    max-width: $min-width/2;
     width: 30%;
     border-radius: 50%;
 }
