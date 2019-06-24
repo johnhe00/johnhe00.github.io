@@ -150,3 +150,12 @@ body {
     text-align: center;
 }
 
+.footer-icon {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.footer-icon:hover {
+    opacity: 0.5;
+}
+
