@@ -6,7 +6,9 @@
     <nav id="nav" class="nav">
     {% for item in site.navigation %}
         {% assign class = 'nav-item' %}
-        {% if page.url == item.url %}
+        {% if page.url == item.url and item.url == "/" %}
+            {% assign class = 'nav-item current' %}
+        {% elsif page.url contains item.url and item.url != "/" %}
             {% assign class = 'nav-item current' %}
         {% endif %}
         <a class="{{ class }}" href="{{ item.url }}">{{ item.title}}</a>
