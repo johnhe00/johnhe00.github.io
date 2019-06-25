@@ -1,0 +1,32 @@
+---
+layout: page
+title: Minesweeper
+---
+<style>
+    #page-minesweeper {
+        text-align: center;
+    }
+
+	#canvas {
+        border: 1px solid black;
+    }
+    .minesweeper-control {
+        margin: 5px 5px 10px;
+        padding: 5px;
+        width: 100px;
+    }
+</style>
+<div id="page-minesweeper">
+    <input class="minesweeper-control" id="btn-easy" type="button" value="Easy">
+    <input class="minesweeper-control" id="btn-medium" type="button" value="Medium">
+    <input class="minesweeper-control" id="btn-hard" type="button" value="Hard">
+    <br>
+    <div>
+        <strong>Mines: </strong>
+        <span id="flags">0</span>/<span id="mines">10</span>
+    </div>
+	<br>
+	<canvas id="canvas" oncontextmenu="return false;"></canvas>
+</div>
+<script src="/js/minesweeper.js"></script>
+<script>Minesweeper.init()</script>

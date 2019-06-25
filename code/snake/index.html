@@ -1,0 +1,31 @@
+---
+layout: page
+title: Snake
+---
+<style>
+    #page-snake {
+        text-align: center;
+    }
+    #canvas {
+        border: 1px solid black;
+    }
+    .instruction {
+        text-align: left;
+        width: fit-content;
+        margin: 0 auto;
+    }
+</style>
+
+<div id="page-snake">
+    <div class="instruction">
+        <p>W - up</p>
+        <p>A - left</p>
+        <p>S - down</p>
+        <p>D - right</p>
+        <p>ENTER - start</p>
+        <br>
+    </div>
+    <label><strong>Noms Eaten:</strong> </label><label id="score">0</label><br>
+    <canvas id="canvas" oncontextmenu="return false"></canvas>
+</div>
+<script src="/js/snake.js"></script>
