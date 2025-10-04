@@ -1,0 +1,31 @@
+- category: Landscapes
+  thumb: https://picsum.photos/400/267?random=1
+  full:  https://picsum.photos/1600/1067?random=1
+  width: 1600
+  height: 1067
+  alt: "Mountain range at sunset"
+  caption: "Mountain range at sunset"
+
+- category: Landscapes
+  thumb: https://picsum.photos/400/300?random=2
+  full:  https://picsum.photos/1600/1200?random=2
+  width: 1600
+  height: 1200
+  alt: "Forest path with soft morning light"
+  caption: "Forest path with soft morning light"
+
+- category: Portraits
+  thumb: https://picsum.photos/300/400?random=3
+  full:  https://picsum.photos/1200/1600?random=3
+  width: 1200
+  height: 1600
+  alt: "Black and white portrait"
+  caption: "Black and white portrait"
+
+- category: Street
+  thumb: https://picsum.photos/400/300?random=4
+  full:  https://picsum.photos/1600/1200?random=4
+  width: 1600
+  height: 1200
+  alt: "Candid street scene"
+  caption: "Candid street scene"

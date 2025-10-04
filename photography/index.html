@@ -1,16 +1,32 @@
 ---
 layout: default
 title: Photography
+photoswipe: true
 ---
 
-<!--
-<article class="photo-card">
-    <img class="photo-img" src="/imgs/wheel.jpg">
-    <p class="photo-blurb">This is a ferris that can be found in Seattle.</p>
-</article>
+<section class="section photography-intro">
+    <h2>Photography</h2>
+    <p>Capturing moments, textures, and stories through the lens.
+        Browse by category: landscapes, portraits, and street photography.</p>
+</section>
 
-<article class="photo-card">
-    <img class="photo-img" src="/imgs/wheel.jpg">
-    <p class="photo-blurb">This is a ferris that can be found in Seattle.</p>
-</article>
--->
+<section class="section photo-gallery">
+    {% assign categories = site.data.photos | map: "category" | uniq %}
+    {% for cat in categories %}
+    <h3 class="gallery-category">{{ cat }}</h3>
+    <div class="gallery" id="gallery-{{ cat | downcase }}" data-pswp-group="{{ cat }}">
+        {% for photo in site.data.photos %}
+        {% if photo.category == cat %}
+        <figure>
+            <a href="{{ photo.full }}" data-pswp-width="{{ photo.width }}" data-pswp-height="{{ photo.height }}"
+                data-pswp-caption="{{ photo.caption }}">
+                <img src="{{ photo.thumb }}" alt="{{ photo.alt }}" loading="lazy" decoding="async">
+            </a>
+            <figcaption>{{ photo.caption }}</figcaption>
+        </figure>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+</section>

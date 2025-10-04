@@ -3,6 +3,12 @@
 
 <head>
   {% include head.html %}
+
+  {% if page.photoswipe %}
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+  <link rel="modulepreload" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js">
+  <link rel="modulepreload" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js">
+  {% endif %}
 </head>
 
 <body>
@@ -20,6 +26,58 @@
   {% include footer.html %}
 
   <script src="/assets/js/nav.js"></script>
+
+  {% if page.photoswipe %}
+  <script type="module">
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '.gallery',
+      children: 'a',
+      pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+      showHideAnimationType: 'fade',
+      zoom: false,
+      wheelToZoom: false,
+      maxZoomPixelRatio: 1,
+      paddingFn: (viewportSize, itemData, index) => {
+        return {
+          top: 20,
+          bottom: 20,  // reserve 80px for the caption bar
+          left: 20,
+          right: 20
+        };
+      }
+    });
+
+    // Custom caption + counter bar
+    // lightbox.on('uiRegister', () => {
+    //   lightbox.pswp.ui.registerElement({
+    //     name: 'custom-caption',
+    //     order: 9,
+    //     isButton: false,
+    //     appendTo: 'wrapper',       // put it under the image area
+    //     className: 'pswp__custom-caption',
+    //     onInit: (el, pswp) => {
+    //       pswp.on('change', () => {
+    //         const curr = pswp.currSlide?.data?.element;
+    //         const caption = curr?.getAttribute('data-pswp-caption') || '';
+    //         const group = curr?.closest('.gallery')?.getAttribute('data-pswp-group') || '';
+    //         el.innerHTML = `
+    //         <div class="pswp__caption-inner">
+    //           <div class="pswp__caption-text">
+    //             ${group ? `<strong>${group}</strong> - ` : ''}${caption}
+    //           </div>
+    //         </div>`;
+    //       });
+    //     }
+    //   });
+    // });
+
+    lightbox.init();
+  </script>
+  {% endif %}
+
+
 </body>
 
 </html>
