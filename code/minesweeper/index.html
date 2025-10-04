@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Minesweeper
 ---
 <style>
@@ -7,9 +7,10 @@ title: Minesweeper
         text-align: center;
     }
 
-	#canvas {
+    #canvas {
         border: 1px solid black;
     }
+
     .minesweeper-control {
         margin: 5px 5px 10px;
         padding: 5px;
@@ -25,8 +26,8 @@ title: Minesweeper
         <strong>Mines: </strong>
         <span id="flags">0</span>/<span id="mines">10</span>
     </div>
-	<br>
-	<canvas id="canvas" oncontextmenu="return false;"></canvas>
+    <br>
+    <canvas id="canvas" oncontextmenu="return false;"></canvas>
 </div>
 <script src="/js/minesweeper.js"></script>
 <script>Minesweeper.init()</script>

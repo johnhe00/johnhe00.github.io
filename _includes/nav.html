@@ -1,0 +1,32 @@
+<!-- Desktop Nav -->
+<nav class="desktop-nav">
+  <ul>
+    {% for item in site.data.navigation %}
+    <li>
+      <a href="{{ item.url }}" class="{% if page.url contains item.url %}active{% endif %}">
+        {{ item.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<!-- Hamburger (mobile only) -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeBtn">&times;</button>
+  {% for item in site.data.navigation %}
+  <a href="{{ item.url }}" class="{% if page.url contains item.url %}active{% endif %}">
+    {{ item.title }}
+  </a>
+  {% endfor %}
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>

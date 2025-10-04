@@ -11,13 +11,3 @@ github_username:  johnhe00
 
 # Build settings
 markdown: kramdown
-
-navigation:
-    - title: About
-      url: /
-    - title: Code
-      url: /code/
-    - title: Music
-      url: /music/
-    - title: Photos
-      url: /photos/
